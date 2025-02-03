@@ -69,7 +69,7 @@ export default function HomePage() {
               <h2 className="sm:text-3xl text-2xl font-medium title-font mb-4">Our Purpose</h2>
               <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-300">
                 NEXT ΞRA Hoops was founded for players who aspire to compete at the highest levels of youth basketball.
-                We don't just teach the game; we inspire growth on and off the court. Our goal is to develop not only
+                We don&apos;t just teach the game; we inspire growth on and off the court. Our goal is to develop not only
                 exceptional athletes but also outstanding individuals. We emphasize intensity, teamwork, discipline,
                 dedication, and, most importantly, the love of the game. These core values are critical for success in
                 basketball and life beyond the court.
@@ -83,7 +83,7 @@ export default function HomePage() {
             <div className="text-center mb-20">
               <h2 className="sm:text-3xl text-2xl font-medium title-font mb-4">Player Development Philosophy</h2>
               <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-300">
-                At NEXT ΞRA, we focus on holistic development. Our coaching staff is committed to refining each player's
+                At NEXT ΞRA, we focus on holistic development. Our coaching staff is committed to refining each player&apos;s
                 skills, basketball IQ, and physical fitness while nurturing character, leadership, and sportsmanship.
               </p>
             </div>
@@ -118,7 +118,7 @@ export default function HomePage() {
             <div className="flex flex-col text-center w-full mb-12">
               <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-neh-white">Get in Touch</h1>
               <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-300">
-                Interested in joining or supporting NEXT ΞRA Hoops? Contact us at Contact@NextEraHoops.org. Let's build
+                Interested in joining or supporting NEXT ΞRA Hoops? Contact us at Contact@NextEraHoops.org. Let&apos;s build
                 the NEXT ΞRA together.
               </p>
             </div>

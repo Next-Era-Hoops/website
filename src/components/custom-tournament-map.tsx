@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import dynamic from "next/dynamic"
 import "leaflet/dist/leaflet.css"
+import { Skeleton } from "@/components/ui/skeleton"
 
 // Define Location type
 interface Location {
@@ -28,6 +29,7 @@ const locations: Location[] = [
 function TournamentMap() {
   const mapRef = useRef<HTMLDivElement | null>(null)
   const [leaflet, setLeaflet] = useState<typeof import("leaflet") | null>(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -42,7 +44,6 @@ function TournamentMap() {
     if (!leaflet || !mapRef.current) return
 
     const L = leaflet
-
     const map = L.map(mapRef.current).setView([39.5, -77], 7)
 
     L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
@@ -77,12 +78,21 @@ function TournamentMap() {
       L.marker([location.lat, location.lng], { icon: customIcon }).addTo(map).bindPopup(location.name)
     })
 
+    setLoading(false) // Mark map as loaded
+
     return () => {
       map.remove()
     }
   }, [leaflet]) // Runs only after Leaflet is loaded
 
-  return <div ref={mapRef} style={{ width: "100%", height: "400px" }} />
+  return (
+    <div className="relative">
+      {loading && (
+        <Skeleton className="absolute top-0 left-0 w-full h-[400px] bg-gray-700 animate-pulse rounded-md" />
+      )}
+      <div ref={mapRef} className="w-full h-[400px]" />
+    </div>
+  )
 }
 
 // ✅ Dynamically import TournamentMap to ensure it is client-side only

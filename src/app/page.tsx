@@ -31,8 +31,8 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                The Future of Hoops Starts Now. <br />
-                <br className="hidden lg:inline-block" />
+                The Future of Hoops Starts Now.
+                <br />
                 <motion.span
                   className="sm:text-4xl text-2xl text-neh-cyan"
                   initial={{ y: 20, opacity: 0 }}

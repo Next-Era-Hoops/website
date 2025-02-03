@@ -1,16 +1,17 @@
 "use client"
 
+import { useEffect, useRef, useState } from "react"
 import dynamic from "next/dynamic"
-import { useEffect, useRef } from "react"
-import L from "leaflet"
 import "leaflet/dist/leaflet.css"
 
+// Define Location type
 interface Location {
   name: string
   lat: number
   lng: number
 }
 
+// Tournament locations
 const locations: Location[] = [
   { name: "PA - Spooky Nook Sports", lat: 40.0583, lng: -76.2982 },
   { name: "DC - Walter E Washington Convention Center", lat: 38.9031, lng: -77.0219 },
@@ -25,59 +26,66 @@ const locations: Location[] = [
 ]
 
 function TournamentMap() {
-  const mapRef = useRef<L.Map | null>(null)
+  const mapRef = useRef<HTMLDivElement | null>(null)
+  const [leaflet, setLeaflet] = useState<any>(null)
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      if (!mapRef.current) {
-        mapRef.current = L.map("map").setView([39.5, -77], 7)
-
-        L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-          attribution:
-            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-          subdomains: "abcd",
-          maxZoom: 20,
-        }).addTo(mapRef.current)
-
-        Object.assign(L.Icon.Default.prototype, {
-          _getIconUrl() {
-            return ""
-          },
-        })
-
-        L.Icon.Default.mergeOptions({
-          iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
-          iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-          shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
-        })
-
-        const customIcon = L.divIcon({
-          className: "custom-div-icon",
-          html: `<div style="background-color: #84F5D5; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white;"></div>`,
-          iconSize: [12, 12],
-          iconAnchor: [6, 6],
-        })
-
-        locations.forEach((location) => {
-          L.marker([location.lat, location.lng], { icon: customIcon }).addTo(mapRef.current!).bindPopup(location.name)
-        })
-      }
-    }
-
-    return () => {
-      if (mapRef.current) {
-        mapRef.current.remove()
-        mapRef.current = null
-      }
+      // Dynamically import Leaflet (avoiding SSR issues)
+      import("leaflet").then((L) => {
+        setLeaflet(L) // Store Leaflet in state when available
+      })
     }
   }, [])
 
-  return <div id="map" style={{ width: "100%", height: "400px" }} />
+  useEffect(() => {
+    if (!leaflet || !mapRef.current) return
+
+    const L = leaflet
+
+    const map = L.map(mapRef.current).setView([39.5, -77], 7)
+
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: "abcd",
+      maxZoom: 20,
+    }).addTo(map)
+
+    // Fix for missing marker icons in Leaflet
+    Object.assign(L.Icon.Default.prototype, {
+      _getIconUrl() {
+        return ""
+      },
+    })
+
+    L.Icon.Default.mergeOptions({
+      iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
+      iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+      shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+    })
+
+    // Custom icon with the NEH cyan color
+    const customIcon = L.divIcon({
+      className: "custom-div-icon",
+      html: `<div style="background-color: #84F5D5; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white;"></div>`,
+      iconSize: [12, 12],
+      iconAnchor: [6, 6],
+    })
+
+    locations.forEach((location) => {
+      L.marker([location.lat, location.lng], { icon: customIcon }).addTo(map).bindPopup(location.name)
+    })
+
+    return () => {
+      map.remove()
+    }
+  }, [leaflet]) // Runs only after Leaflet is loaded
+
+  return <div ref={mapRef} style={{ width: "100%", height: "400px" }} />
 }
 
-// ✅ Use dynamic import to ensure the map component only runs on the client
-const DynamicTournamentMap = dynamic(() => Promise.resolve(TournamentMap), {
-  ssr: false, // Disable server-side rendering
-})
+// ✅ Dynamically import TournamentMap to ensure it is client-side only
+const DynamicTournamentMap = dynamic(() => Promise.resolve(TournamentMap), { ssr: false })
 
 export default DynamicTournamentMap

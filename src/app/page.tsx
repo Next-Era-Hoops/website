@@ -168,7 +168,7 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                NEXT ΞRA Hoops was founded for players who aspire to compete at the highest levels of youth basketball. We don't
+                NEXT ΞRA Hoops was founded for players who aspire to compete at the highest levels of youth basketball. We don&apos;t
                 just teach the game; we inspire growth on and off the court. Our goal is to develop not only exceptional
                 athletes but also outstanding individuals.
               </motion.p>

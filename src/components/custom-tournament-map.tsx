@@ -1,5 +1,6 @@
 "use client"
 
+import dynamic from "next/dynamic"
 import { useEffect, useRef } from "react"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
@@ -20,10 +21,10 @@ const locations: Location[] = [
   { name: "MD - Athletic Republic", lat: 38.8513, lng: -76.8885 },
   { name: "PA - Philly Expo Center", lat: 40.1220, lng: -75.3307 },
   { name: "VA - Walter Reed Recreation Center", lat: 38.8645, lng: -77.0927 },
-  { name: "MD - District Heights Athletic Republic", lat: 38.8513, lng: -76.8885 }, 
+  { name: "MD - District Heights Athletic Republic", lat: 38.8513, lng: -76.8885 },
 ]
 
-export default function CustomTournamentMap() {
+function TournamentMap() {
   const mapRef = useRef<L.Map | null>(null)
 
   useEffect(() => {
@@ -38,7 +39,6 @@ export default function CustomTournamentMap() {
           maxZoom: 20,
         }).addTo(mapRef.current)
 
-        // ✅ Cleanest way to override the Leaflet marker icons
         Object.assign(L.Icon.Default.prototype, {
           _getIconUrl() {
             return ""
@@ -51,7 +51,6 @@ export default function CustomTournamentMap() {
           shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
         })
 
-        // Custom icon with the NEH cyan color
         const customIcon = L.divIcon({
           className: "custom-div-icon",
           html: `<div style="background-color: #84F5D5; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white;"></div>`,
@@ -75,3 +74,10 @@ export default function CustomTournamentMap() {
 
   return <div id="map" style={{ width: "100%", height: "400px" }} />
 }
+
+// ✅ Use dynamic import to ensure the map component only runs on the client
+const DynamicTournamentMap = dynamic(() => Promise.resolve(TournamentMap), {
+  ssr: false, // Disable server-side rendering
+})
+
+export default DynamicTournamentMap

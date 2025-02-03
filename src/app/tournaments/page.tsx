@@ -1,7 +1,10 @@
+"use client"
+
 import { MapPin, Calendar } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import CustomTournamentMap from "@/components/custom-tournament-map"
+import { motion } from "framer-motion"
 
 const tournaments = [
   {
@@ -106,29 +109,36 @@ export default function TournamentSchedulePage() {
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {tournaments.map((tournament, index) => (
-            <Card
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               key={index}
-              className={`transform transition-all hover:scale-105 ${
-                tournament.isMadeCircuit ? "bg-neh-cyan/10 border-neh-cyan" : "bg-neh-black/50 border-neh-white/20"
-              }`}
             >
-              <CardHeader className="pb-2">
-                <div className="flex justify-between items-start">
-                  <Badge variant={tournament.isMadeCircuit ? "default" : "secondary"}>{tournament.league}</Badge>
-                  <div className="flex items-center text-neh-cyan">
-                    <Calendar className="h-4 w-4 mr-1" />
-                    <span className="text-sm">{tournament.date}</span>
+              <Card
+                className={`transform transition-all hover:scale-105 ${
+                  tournament.isMadeCircuit ? "bg-neh-cyan/10 border-neh-cyan" : "bg-neh-black/50 border-neh-white/20"
+                }`}
+              >
+                <CardHeader className="pb-2">
+                  <div className="flex justify-between items-start">
+                    <Badge variant={tournament.isMadeCircuit ? "default" : "secondary"}>{tournament.league}</Badge>
+                    <div className="flex items-center text-neh-cyan">
+                      <Calendar className="h-4 w-4 mr-1" />
+                      <span className="text-sm">{tournament.date}</span>
+                    </div>
                   </div>
-                </div>
-                <CardTitle className="text-lg mt-2 text-neh-white">{tournament.name}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-center text-neh-white/80">
-                  <MapPin className="h-4 w-4 mr-2 text-neh-cyan" />
-                  <span>{tournament.location}</span>
-                </div>
-              </CardContent>
-            </Card>
+                  <CardTitle className="text-lg mt-2 text-neh-white">{tournament.name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center text-neh-white/80">
+                    <MapPin className="h-4 w-4 mr-2 text-neh-cyan" />
+                    <span>{tournament.location}</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>

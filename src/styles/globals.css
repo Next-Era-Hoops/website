@@ -2,8 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "EEurostile";
+  src: url("https://db.onlinewebfonts.com/t/a8e30dcee60c4c8fcc3e7fe683d2d6b1.eot");
+  src: url("https://db.onlinewebfonts.com/t/a8e30dcee60c4c8fcc3e7fe683d2d6b1.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/a8e30dcee60c4c8fcc3e7fe683d2d6b1.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/a8e30dcee60c4c8fcc3e7fe683d2d6b1.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/a8e30dcee60c4c8fcc3e7fe683d2d6b1.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/a8e30dcee60c4c8fcc3e7fe683d2d6b1.svg#EEurostile")format("svg");
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "EEurostile", sans-serif;
 }
 
 @layer base {
@@ -69,4 +79,23 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.custom-div-icon {
+  background: none !important;
+  border: none !important;
+}
+
+.custom-div-icon div {
+  box-shadow: 0 0 10px rgba(132, 245, 213, 0.5);
+}
+
+.leaflet-popup-content-wrapper {
+  background: #000 !important;
+  color: #fff !important;
+  border: 1px solid #84f5d5;
+}
+
+.leaflet-popup-tip {
+  background: #84f5d5 !important;
 }

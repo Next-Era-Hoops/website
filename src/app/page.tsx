@@ -26,15 +26,15 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <motion.h1
-                className="title-font sm:text-3xl text-2xl mb-4 font-bold"
+                className="title-font sm:text-3xl text-xl mb-4 font-bold"
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                The Future of Hoops Starts Now.
+                The Future of Hoops Starts Now. <br />
                 <br className="hidden lg:inline-block" />
                 <motion.span
-                  className="sm:text-4xl text-3xl text-neh-cyan"
+                  className="sm:text-4xl text-2xl text-neh-cyan"
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
@@ -221,7 +221,7 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <motion.h2 
-                className="text-5xl font-bold tracking-wider mb-4 text-neh-white"
+                className="text-4xl sm:text-5xl font-bold tracking-wider mb-4 text-neh-white"
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}

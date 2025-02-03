@@ -27,7 +27,7 @@ const locations: Location[] = [
 
 function TournamentMap() {
   const mapRef = useRef<HTMLDivElement | null>(null)
-  const [leaflet, setLeaflet] = useState<any>(null)
+  const [leaflet, setLeaflet] = useState<typeof import("leaflet") | null>(null)
 
   useEffect(() => {
     if (typeof window !== "undefined") {

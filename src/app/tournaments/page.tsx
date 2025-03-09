@@ -98,7 +98,7 @@ export default function TournamentSchedulePage() {
     <div className="min-h-screen bg-neh-black text-neh-white font-eurostile">
       <div className="container mx-auto px-4 py-8">
         <header className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-neh-cyan">NEXT ΞRA Hoops</h1>
+          <h1 className="text-4xl font-bold text-neh-cyan">NEXT ERA Hoops</h1>
           <p className="text-xl text-neh-white mt-2">2025 Tournament Schedule</p>
         </header>
 

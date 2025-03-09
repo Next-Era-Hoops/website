@@ -44,7 +44,7 @@ export default function HomePage() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                  Welcome to the NEXT ΞRA.
+                  Welcome to the NEXT ERA.
                 </motion.span>
               </motion.h1>
               <motion.p
@@ -53,7 +53,7 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
-                NEXT ΞRA Hoops is an elite AAU travel basketball program proudly serving Northern Virginia, Washington,
+                NEXT ERA Hoops is an elite AAU travel basketball program proudly serving Northern Virginia, Washington,
                 D.C., and Maryland. Our mission is to develop the next generation of athletes by instilling a mindset of
                 excellence, resilience, and relentless work ethic—on and off the court.
               </motion.p>
@@ -114,7 +114,7 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.9 }}
               >
-                About NEXT ΞRA Hoops
+                About NEXT ERA Hoops
               </motion.h2>
               <motion.p
                 className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-300"
@@ -122,14 +122,14 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1 }}
               >
-                NEXT ΞRA Hoops is an elite AAU travel basketball program proudly serving Northern Virginia, Washington,
+                NEXT ERA Hoops is an elite AAU travel basketball program proudly serving Northern Virginia, Washington,
                 D.C., and Maryland. We believe in pushing limits, embracing the grind, and preparing players to compete
                 at the highest level.
                 <br />
                 We are more than just a basketball program; we are a community committed to fostering growth,
                 leadership, and excellence. Our athletes are challenged to reach their full potential through structured
                 training, competitive play, and mentorship. With a focus on both individual and team development, NEXT
-                ΞRA Hoops provides a comprehensive basketball experience that prepares players for success at the middle
+                ERA Hoops provides a comprehensive basketball experience that prepares players for success at the middle
                 school, high school, and collegiate levels.
               </motion.p>
               <motion.div
@@ -173,7 +173,7 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                NEXT ΞRA Hoops was founded for players who aspire to compete at the highest levels of youth basketball. We don&apos;t
+                NEXT ERA Hoops was founded for players who aspire to compete at the highest levels of youth basketball. We don&apos;t
                 just teach the game; we inspire growth on and off the court. Our goal is to develop not only exceptional
                 athletes but also outstanding individuals.
               </motion.p>
@@ -239,7 +239,7 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                At NEXT ΞRA, we focus on holistic development. Our coaching staff is committed to refining each player&apos;s
+                At NEXT ERA, we focus on holistic development. Our coaching staff is committed to refining each player&apos;s
                 skills, basketball IQ, and physical fitness while nurturing character, leadership, and sportsmanship.
               </motion.p>
               <motion.div 
@@ -375,7 +375,7 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Player safety is one of our top priorities. NEXT ΞRA continually reviews and updates policies, programs,
+                Player safety is one of our top priorities. NEXT ERA continually reviews and updates policies, programs,
                 and training to ensure the safety of our players.
               </motion.p>
               <motion.div 
@@ -442,7 +442,7 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                NEXT ΞRA Hoops is proud to partner with local businesses, organizations, and individuals who share our
+                NEXT ERA Hoops is proud to partner with local businesses, organizations, and individuals who share our
                 commitment to youth development and community engagement.
               </motion.p>
               <motion.div
@@ -581,7 +581,7 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                Join the NEXT ΞRA
+                Join the NEXT ERA
               </motion.h2>
               <motion.p 
                 className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-300"
@@ -589,7 +589,7 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                NEXT ΞRA Hoops, Inc. is a 501(c)(3) Virginia-based non-profit organization, primarily funded through tax-deductible contributions. Whether you&apos;re a player, coach, trainer, or supporter, there are many ways to get involved. Help us shape the future of basketball.
+                NEXT ERA Hoops, Inc. is a 501(c)(3) Virginia-based non-profit organization, primarily funded through tax-deductible contributions. Whether you&apos;re a player, coach, trainer, or supporter, there are many ways to get involved. Help us shape the future of basketball.
               </motion.p>
               <motion.div 
                 className="w-24 h-1 mt-6 bg-neh-cyan mx-auto rounded"
@@ -626,8 +626,8 @@ export default function HomePage() {
               >
                 <h1 className="text-5xl font-bold tracking-wider mb-4 text-neh-white">Get in Touch</h1>
                 <p className="lg:w-2/3 mx-auto leading-relaxed text-xl text-gray-300">
-                  Interested in joining or supporting NEXT ΞRA Hoops? Let&apos;s build
-                  the NEXT ΞRA together.
+                  Interested in joining or supporting NEXT ERA Hoops? Let&apos;s build
+                  the NEXT ERA together.
                 </p>
               </motion.div>
               <motion.div 

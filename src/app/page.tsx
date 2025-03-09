@@ -7,6 +7,11 @@ import { Trophy, CreditCard, GraduationCap, PersonStanding, Brain, Award, Star, 
 import CheckoutButton from "@/components/checkout-button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
+const images = {
+  inflow: "/sponsors/inflow.png",
+}
 
 export default function HomePage() {
   return (
@@ -39,7 +44,7 @@ export default function HomePage() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                  Welcome to the NEXT ΞRA.
+                  Welcome to the NEXT ERA.
                 </motion.span>
               </motion.h1>
               <motion.p
@@ -48,7 +53,7 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
-                NEXT ΞRA Hoops is an elite AAU travel basketball program proudly serving Northern Virginia, Washington,
+                NEXT ERA Hoops is an elite AAU travel basketball program proudly serving Northern Virginia, Washington,
                 D.C., and Maryland. Our mission is to develop the next generation of athletes by instilling a mindset of
                 excellence, resilience, and relentless work ethic—on and off the court.
               </motion.p>
@@ -81,7 +86,7 @@ export default function HomePage() {
               <Image
                 className="object-cover object-center rounded"
                 alt="Next Era Hoops Team"
-                src="/next-era-logo-horizontal.png"
+                src="/next-era-logo.png"
                 width={720}
                 height={600}
               />
@@ -109,7 +114,7 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.9 }}
               >
-                About NEXT ΞRA Hoops
+                About NEXT ERA Hoops
               </motion.h2>
               <motion.p
                 className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-300"
@@ -117,14 +122,14 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1 }}
               >
-                NEXT ΞRA Hoops is an elite AAU travel basketball program proudly serving Northern Virginia, Washington,
+                NEXT ERA Hoops is an elite AAU travel basketball program proudly serving Northern Virginia, Washington,
                 D.C., and Maryland. We believe in pushing limits, embracing the grind, and preparing players to compete
                 at the highest level.
                 <br />
                 We are more than just a basketball program; we are a community committed to fostering growth,
                 leadership, and excellence. Our athletes are challenged to reach their full potential through structured
                 training, competitive play, and mentorship. With a focus on both individual and team development, NEXT
-                ΞRA Hoops provides a comprehensive basketball experience that prepares players for success at the middle
+                ERA Hoops provides a comprehensive basketball experience that prepares players for success at the middle
                 school, high school, and collegiate levels.
               </motion.p>
               <motion.div
@@ -168,7 +173,7 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                NEXT ΞRA Hoops was founded for players who aspire to compete at the highest levels of youth basketball. We don&apos;t
+                NEXT ERA Hoops was founded for players who aspire to compete at the highest levels of youth basketball. We don&apos;t
                 just teach the game; we inspire growth on and off the court. Our goal is to develop not only exceptional
                 athletes but also outstanding individuals.
               </motion.p>
@@ -234,7 +239,7 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                At NEXT ΞRA, we focus on holistic development. Our coaching staff is committed to refining each player&apos;s
+                At NEXT ERA, we focus on holistic development. Our coaching staff is committed to refining each player&apos;s
                 skills, basketball IQ, and physical fitness while nurturing character, leadership, and sportsmanship.
               </motion.p>
               <motion.div 
@@ -314,9 +319,9 @@ export default function HomePage() {
 
             <div className="flex flex-wrap -m-4">
               {[
-                { icon: Trophy, title: "Development Teams", age: "6U-10U", desc: "Focused on fundamental skill development, learning the basics of team play, and understanding the pace of competitive basketball." },
-                { icon: Award, title: "Regional Teams", age: "11U-14U", desc: "Competing in local and regional tournaments, these teams focus on advanced skill development and strategic play." },
-                { icon: Star, title: "Premier Circuit Teams", age: "13U-18U", desc: "For athletes with prior travel basketball experience, competing at the highest level in national showcases and exposure events. These teams are designed to help players gain visibility for college recruitment." }
+                { icon: Star, title: "Premier Circuit Teams", age: "9U-18U", desc: "Our AAU Circuit Teams are built for elite-level players ready to compete on the national stage. These teams participate in top-tier showcases and exposure events, offering athletes the chance to test their skills against the best on the East Coast and beyond. For players in the 14U-18U division, our focus extends beyond competition as we strive to create pathways for college recruitment and scholarship opportunities." },
+                { icon: Award, title: "Regional Teams", age: "6U-14U", desc: "Designed for highly competitive local and regional play, our Regional Teams emphasize advanced skill development, team strategy, and game execution. These teams provide a stepping stone to elite competition, preparing athletes for higher levels of play while competing in local and regional tournaments." },
+                { icon: Trophy, title: "Next Generation Hoopers", age: "5U-9U", desc: "At Next Era Hoops, we're committed to developing young athletes from the ground up. Our Next Generation Hoopers program introduces players (ages 5-9) to basketball fundamentals, teamwork, and game IQ, laying the foundation for long-term success on the court. Our goal for younger athletes is to have our young athletes competing in local tournaments by 3rd grade." },
               ].map((item, index) => (
                 <motion.div 
                   key={index} 
@@ -370,7 +375,7 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Player safety is one of our top priorities. NEXT ΞRA continually reviews and updates policies, programs,
+                Player safety is one of our top priorities. NEXT ERA continually reviews and updates policies, programs,
                 and training to ensure the safety of our players.
               </motion.p>
               <motion.div 
@@ -408,6 +413,153 @@ export default function HomePage() {
           </div>
         </motion.section>
 
+        <motion.section
+          id="sponsors"
+          className="body-font bg-neh-black/50"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="container px-5 py-24 mx-auto">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <motion.h2
+                className="text-5xl font-bold tracking-wider mb-4 text-neh-white"
+                initial={{ y: -20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                Official Sponsors of NEXT ERA Hoops
+              </motion.h2>
+              <motion.p
+                className="text-xl leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-300 mb-8"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                NEXT ERA Hoops is proud to partner with local businesses, organizations, and individuals who share our
+                commitment to youth development and community engagement.
+              </motion.p>
+              <motion.div
+                className="w-24 h-1 bg-neh-cyan mx-auto rounded"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              />
+            </motion.div>
+            <motion.div 
+              className="mx-auto w-full flex justify-center items-center gap-3 py-12 lg:gap-6 px-16 md:px-32"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <Carousel className="flex justify-center items-center" opts={{ loop: true, align: "center", }} plugins={[Autoplay({delay: 3000,}),]}>
+                <CarouselContent>
+                  <CarouselItem className="basis-1/3 mx-auto flex justify-center items-center">
+                    <Image
+                      src={images.inflow}
+                      width={200}
+                      height={100}
+                      alt="INflow Federal Logo"
+                      className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
+                    />
+                  </CarouselItem>
+                  <CarouselItem className="basis-1/3 mx-auto flex justify-center items-center">
+                    <Image
+                      src={images.inflow}
+                      width={200}
+                      height={100}
+                      alt="INflow Federal Logo"
+                      className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
+                    />
+                  </CarouselItem>
+                  <CarouselItem className="basis-1/3 mx-auto flex justify-center items-center">
+                    <Image
+                      src={images.inflow}
+                      width={200}
+                      height={100}
+                      alt="INflow Federal Logo"
+                      className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
+                    />
+                  </CarouselItem>
+                  <CarouselItem className="basis-1/3 mx-auto flex justify-center items-center">
+                    <Image
+                      src={images.inflow}
+                      width={200}
+                      height={100}
+                      alt="INflow Federal Logo"
+                      className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
+                    />
+                  </CarouselItem>
+                  <CarouselItem className="basis-1/3 mx-auto flex justify-center items-center">
+                    <Image
+                      src={images.inflow}
+                      width={200}
+                      height={100}
+                      alt="INflow Federal Logo"
+                      className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
+                    />
+                  </CarouselItem>
+                  <CarouselItem className="basis-1/3 mx-auto flex justify-center items-center">
+                    <Image
+                      src={images.inflow}
+                      width={200}
+                      height={100}
+                      alt="INflow Federal Logo"
+                      className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
+                    />
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </motion.div>
+            <motion.div
+              className="text-center mt-16"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+            >
+              <h3 className="text-3xl font-bold text-neh-white mb-4">Why Sponsor?</h3>
+              <ul className="text-xl text-gray-300 space-y-4">
+                <li>✔ Empower Local Youth – Help your kids and their peers develop elite skills and grow their love for the game.</li>
+                <li>✔ Build Loudoun County’s Basketball Legacy – Be part of establishing our community as a top-tier basketball hub.</li>
+                <li>✔ Make a Direct Community Impact – Support local youth development and give back to the community.</li>
+                <li>✔ Boost Your Business Visibility – Gain exposure to an engaged audience of families and sports enthusiasts.</li>
+                <li>✔ Tax Benefits – Your sponsorship may qualify as a tax-deductible contribution.</li>
+              </ul>
+            </motion.div>
+            <motion.div
+              className="text-center mt-16"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <h3 className="text-3xl font-bold text-neh-white mb-4">Interested in becoming a sponsor?</h3>
+              <p className="text-xl text-gray-300">
+                We’re always looking for local businesses, community leaders, and parents who believe in the power of youth sports to shape the future. Together, we can help kids become elite players while making Loudoun County a force in youth basketball. Contact us today to discuss partnership opportunities!
+              </p>
+            </motion.div>
+            <motion.div
+              className="flex justify-center mt-16"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+            >
+              <Button className="text-neh-black bg-neh-cyan border-0 py-2 focus:outline-none hover:bg-neh-cyan/80 rounded">
+                <Link href="mailto:contact@nexterahoops.org">
+                  Email Us
+                </Link>
+              </Button>
+            </motion.div>
+          </div>
+        </motion.section>
+
         <motion.section 
           id="join" 
           className="body-font"
@@ -429,7 +581,7 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                Join the NEXT ΞRA
+                Join the NEXT ERA
               </motion.h2>
               <motion.p 
                 className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-300"
@@ -437,7 +589,7 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                NEXT ΞRA Hoops, Inc. is a 501(c)(3) Virginia-based non-profit organization, primarily funded through tax-deductible contributions. Whether you&apos;re a player, coach, trainer, or supporter, there are many ways to get involved. Help us shape the future of basketball.
+                NEXT ERA Hoops, Inc. is a 501(c)(3) Virginia-based non-profit organization, primarily funded through tax-deductible contributions. Whether you&apos;re a player, coach, trainer, or supporter, there are many ways to get involved. Help us shape the future of basketball.
               </motion.p>
               <motion.div 
                 className="w-24 h-1 mt-6 bg-neh-cyan mx-auto rounded"
@@ -474,8 +626,8 @@ export default function HomePage() {
               >
                 <h1 className="text-5xl font-bold tracking-wider mb-4 text-neh-white">Get in Touch</h1>
                 <p className="lg:w-2/3 mx-auto leading-relaxed text-xl text-gray-300">
-                  Interested in joining or supporting NEXT ΞRA Hoops? Contact us at Contact@NextEraHoops.org. Let&apos;s build
-                  the NEXT ΞRA together.
+                  Interested in joining or supporting NEXT ERA Hoops? Let&apos;s build
+                  the NEXT ERA together.
                 </p>
               </motion.div>
               <motion.div 

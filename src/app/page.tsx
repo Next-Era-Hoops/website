@@ -81,7 +81,7 @@ export default function HomePage() {
               <Image
                 className="object-cover object-center rounded"
                 alt="Next Era Hoops Team"
-                src="/next-era-logo-horizontal.png"
+                src="/next-era-logo.png"
                 width={720}
                 height={600}
               />
@@ -474,7 +474,7 @@ export default function HomePage() {
               >
                 <h1 className="text-5xl font-bold tracking-wider mb-4 text-neh-white">Get in Touch</h1>
                 <p className="lg:w-2/3 mx-auto leading-relaxed text-xl text-gray-300">
-                  Interested in joining or supporting NEXT ΞRA Hoops? Contact us at Contact@NextEraHoops.org. Let&apos;s build
+                  Interested in joining or supporting NEXT ΞRA Hoops? Let&apos;s build
                   the NEXT ΞRA together.
                 </p>
               </motion.div>

@@ -314,9 +314,9 @@ export default function HomePage() {
 
             <div className="flex flex-wrap -m-4">
               {[
+                { icon: Star, title: "Premier Circuit Teams", age: "13U-18U", desc: "For athletes with prior travel basketball experience, competing at the highest level in national showcases and exposure events. These teams are designed to help players gain visibility for college recruitment." },
                 { icon: Trophy, title: "Development Teams", age: "6U-10U", desc: "Focused on fundamental skill development, learning the basics of team play, and understanding the pace of competitive basketball." },
                 { icon: Award, title: "Regional Teams", age: "11U-14U", desc: "Competing in local and regional tournaments, these teams focus on advanced skill development and strategic play." },
-                { icon: Star, title: "Premier Circuit Teams", age: "13U-18U", desc: "For athletes with prior travel basketball experience, competing at the highest level in national showcases and exposure events. These teams are designed to help players gain visibility for college recruitment." }
               ].map((item, index) => (
                 <motion.div 
                   key={index} 

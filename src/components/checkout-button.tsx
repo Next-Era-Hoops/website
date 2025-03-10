@@ -7,7 +7,7 @@ export default function CheckoutButton() {
     <Button
       className="bg-neh-cyan text-neh-black hover:bg-neh-cyan/80 font-semibold"
     >
-      <Link href="https://buy.stripe.com/5kA01bcHR7KOftKaEE">
+      <Link href="https://buy.stripe.com/28o29j0Z9c140yQ3cd">
         Pay Now
       </Link>
     </Button>

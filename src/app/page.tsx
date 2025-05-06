@@ -86,7 +86,7 @@ export default function HomePage() {
               <Image
                 className="object-cover object-center rounded"
                 alt="Next Era Hoops Team"
-                src="/next-era-logo.png"
+                src="/tne-color-circle.svg"
                 width={720}
                 height={600}
               />
